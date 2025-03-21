@@ -1,76 +1,104 @@
 {
   "profiles": [
-    {
-      "complex_modifications": {
-        "parameters": {
-          "basic.simultaneous_threshold_milliseconds": 100,
-          "basic.to_delayed_action_delay_milliseconds": 100,
-          "basic.to_if_held_down_threshold_milliseconds": 100
-        },
-        "rules": [
-          {
-            "description": "Make 'K' right Option when held",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "k",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to_if_alone": [{ "key_code": "k" }],
-                "to_if_held_down": [{ "key_code": "right_option" }],
-                "type": "basic"
-              }
-            ]
+      {
+          "complex_modifications": {
+              "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 150,
+                  "basic.to_delayed_action_delay_milliseconds": 150,
+                  "basic.to_if_held_down_threshold_milliseconds": 150
+              },
+              "rules": [
+                  {
+                      "description": "Make 'S' right Ctrl when held",
+                      "manipulators": [
+                          {
+                              "from": {
+                                  "key_code": "s",
+                                  "modifiers": { "optional": ["any"] }
+                              },
+                              "to_if_alone": [{ "key_code": "s" }],
+                              "to_if_held_down": [{ "key_code": "right_control" }],
+                              "type": "basic"
+                          }
+                      ]
+                  },
+                  {
+                      "description": "Make 'l' left Ctrl when held",
+                      "manipulators": [
+                          {
+                              "from": {
+                                  "key_code": "l",
+                                  "modifiers": { "optional": ["any"] }
+                              },
+                              "to_if_alone": [{ "key_code": "l" }],
+                              "to_if_held_down": [{ "key_code": "left_control" }],
+                              "type": "basic"
+                          }
+                      ]
+                  },
+                  {
+                      "description": "Make 'K' right Option when held",
+                      "manipulators": [
+                          {
+                              "from": {
+                                  "key_code": "k",
+                                  "modifiers": { "optional": ["any"] }
+                              },
+                              "to_if_alone": [{ "key_code": "k" }],
+                              "to_if_held_down": [{ "key_code": "right_option" }],
+                              "type": "basic"
+                          }
+                      ]
+                  },
+                  {
+                      "description": "Make 'D' left Option when held",
+                      "manipulators": [
+                          {
+                              "from": {
+                                  "key_code": "d",
+                                  "modifiers": { "optional": ["any"] }
+                              },
+                              "to_if_alone": [{ "key_code": "d" }],
+                              "to_if_held_down": [{ "key_code": "left_option" }],
+                              "type": "basic"
+                          }
+                      ]
+                  }
+              ]
           },
-          {
-            "description": "Make 'D' left Option when held",
-            "manipulators": [
+          "name": "Default profile",
+          "rules": [
               {
-                "from": {
-                  "key_code": "d",
-                  "modifiers": { "optional": ["any"] }
-                },
-                "to_if_alone": [{ "key_code": "d" }],
-                "to_if_held_down": [{ "key_code": "left_option" }],
-                "type": "basic"
+                  "description": "Make 'K' right Option when held",
+                  "manipulators": [
+                      {
+                          "from": {
+                              "key_code": "k",
+                              "modifiers": { "optional": ["any"] }
+                          },
+                          "to": [{ "key_code": "right_option" }],
+                          "to_if_alone": [{ "key_code": "k" }],
+                          "type": "basic"
+                      }
+                  ]
+              },
+              {
+                  "description": "Make 'D' left Option when held",
+                  "manipulators": [
+                      {
+                          "from": {
+                              "key_code": "d",
+                              "modifiers": { "optional": ["any"] }
+                          },
+                          "to_if_alone": [{ "key_code": "d" }],
+                          "to_if_held_down": [{ "key_code": "left_option" }],
+                          "type": "basic"
+                      }
+                  ]
               }
-            ]
-          }
-        ]
-      },
-      "name": "Default profile",
-      "rules": [
-        {
-          "description": "Make 'K' right Option when held",
-          "manipulators": [
-            {
-              "from": {
-                "key_code": "k",
-                "modifiers": { "optional": ["any"] }
-              },
-              "to": [{ "key_code": "right_option" }],
-              "to_if_alone": [{ "key_code": "k" }],
-              "type": "basic"
-            }
-          ]
-        },
-        {
-          "description": "Make 'D' left Option when held",
-          "manipulators": [
-            {
-              "from": {
-                "key_code": "d",
-                "modifiers": { "optional": ["any"] }
-              },
-              "to_if_alone": [{ "key_code": "d" }],
-              "to_if_held_down": [{ "key_code": "left_option" }],
-              "type": "basic"
-            }
-          ]
-        }
-      ],
-      "selected": true,
-      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
-    }
+          ],
+          "selected": true,
+          "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+      }
   ]
 }
